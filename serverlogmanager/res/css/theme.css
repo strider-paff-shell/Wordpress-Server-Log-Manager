@@ -1,0 +1,104 @@
+.server-log-manager-nav
+{
+	border-bottom: 1px solid #efefef;
+}
+
+.server-log-manager-nav ul
+{
+	border-bottom: 1px solid #afafaf;
+	padding-left: 5px;
+}
+
+.server-log-manager-nav ul li, .server-log-manager-logs-menu ul li
+{
+	display: inline-block;
+	margin:0;
+	padding:0;
+}
+
+.server-log-manager-nav ul li a
+{
+	display: inline-block;
+	font-size: 16px;
+}
+
+.server-log-manager-nav-tab-button
+{
+	border: 1px solid #afafaf;
+	border-bottom: none;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	display: inline-block;
+	text-decoration: none;
+	padding: 5px 20px;
+}
+
+.server-log-manager-nav-tab-button-active
+{
+	background: rgba(0,0,0,0.1);
+}
+
+
+.server-log-manager-logs-menu ul li a
+{
+	display: inline-block;
+	padding: 0 5px;
+}
+
+.server-log-manager-log code
+{
+	display: block;
+}
+
+.server-log-manager-log code p
+{
+	word-break: break-all;
+}
+
+
+.server-log-manager-log-edit-menu .clear
+{
+	border-left: 5px solid red;
+}
+
+.server-log-manager-log-edit-menu  .add
+{
+	border-left: 5px solid limegreen;
+}
+
+.server-log-manager-log-edit-menu .refresh
+{
+	border-left: 5px solid cornflowerblue;
+}
+
+.server-log-manager-log-edit-menu .tablenav-pages
+{
+	padding-right: 10px;
+}
+
+.server-log-manager-log-edit-logs-item
+{
+	border-bottom: 1px solid #dfdfdf;
+	padding: 10px 0;
+}
+
+.server-log-manager-log-edit-logs-item div
+{
+	display: inline-block;
+}
+
+.server-log-manager-log-edit-logs-item div .button
+{
+	border-left: 5px solid red;
+	display: inline-block;
+}
+
+.server-log-manager-log-edit-logs-item div:first-child
+{
+	width: 80% !important;
+}
+
+.server-log-manager-log-edit-logs-item div:last-child
+{
+	width: 15% !important;
+}

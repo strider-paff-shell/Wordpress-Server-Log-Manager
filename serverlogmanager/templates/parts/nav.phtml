@@ -1,0 +1,19 @@
+<?php
+if (!defined( 'WPINC'))
+{
+    die();
+}
+?>
+<div class="server-log-manager-nav">
+	<ul>
+		<li>
+			<a class="server-log-manager-nav-tab-button <?php echo ($_GET['_view'] == 'main' || $_GET['_view'] == '')? 'server-log-manager-nav-tab-button-active': '';?>" href="tools.php?page=serverlogmanager">Home</a>
+		</li>
+		<li>
+			<a class="server-log-manager-nav-tab-button <?php echo ($_GET['_view'] == 'logs')? 'server-log-manager-nav-tab-button-active': '';?>" href="tools.php?page=serverlogmanager&_view=logs">Logs</a>
+		</li>
+		<li>
+			<a class="server-log-manager-nav-tab-button <?php echo ($_GET['_view'] == 'edit')? 'server-log-manager-nav-tab-button-active': '';?>" href="tools.php?page=serverlogmanager&_view=edit">Edit</a>
+		</li>
+	</ul>
+</div>

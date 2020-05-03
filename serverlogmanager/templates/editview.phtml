@@ -1,0 +1,63 @@
+<?php
+if (!defined( 'WPINC'))
+{
+    die();
+}
+?>
+<?php include("parts/head.phtml");?>
+<div class="tablenav top server-log-manager-log-edit-menu">
+    <div class="alignleft actions bulkactions">
+        <a class="button media-button select-mode-toggle-button clear" href="tools.php?page=serverlogmanager&_view=edit&_action=clear">
+            Delete all logfiles
+        </a>
+    </div>
+    <div class="alignleft actions bulkactions">
+        <a class="button media-button select-mode-toggle-button refresh" href="tools.php?page=serverlogmanager&_view=edit">
+            Refresh
+        </a>
+    </div>
+    <div class="alignleft actions">
+        <form action="" method="get">
+            <input type="hidden" name="_action" value="add">
+            <input type="text" name="logfile">
+            <input type="hidden" name="page" value="serverlogmanager">
+            <input type="hidden" name="_view" value="edit">
+            <input type="submit" value="Add logfile" class="button media-button select-mode-toggle-button add">
+        </form>
+    </div>
+    <div class="tablenav-pages one-page">
+        <b>Total logs acquired: <?php echo count($this->_data['logfiles']);?></b>
+    </div>
+</div>
+
+<h3>Logfiles</h3>
+<ul>
+<?php 
+if(is_array($this->_data['logfiles']) && !is_null($this->_data['logfiles'])):
+	foreach($this->_data['logfiles'] as $logfile):?>
+	<li>
+        <div class="server-log-manager-log-edit-logs-item">
+            <div>
+                <a href="tools.php?page=serverlogmanager&_view=logs&log=<?php echo $logfile;?>">
+                    <?php echo $logfile;?>
+                </a>
+            </div>
+            <div>
+                <?php
+                    $params = "&_view=edit";
+                    $params .="&logfile=". $logfile;
+                    $params .="&_nounce=" . hash('sha256', $logfile);
+                    $params .="&_action=delete";
+                ?>
+                <a class="button media-button select-mode-toggle-button"
+                   href="tools.php?page=serverlogmanager<?php echo $params;?>">
+                    Delete
+                </a>
+            </div>
+        </div>
+	</li>
+<?php
+	endforeach;
+endif;
+?>
+</ul>

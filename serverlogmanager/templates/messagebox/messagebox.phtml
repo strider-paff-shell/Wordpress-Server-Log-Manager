@@ -1,0 +1,31 @@
+<?php
+if (!defined( 'WPINC'))
+{
+    die();
+}
+?>
+<div id="message" class="notice notice-<?php echo $this->_data['type'];?>">
+	<p>
+		<?php 
+			switch ($this->_data['message_type']) 
+			{
+				case 'file_not_found':
+					$message = "File %s does not exist or we don't have permissions to read it.";
+					break;
+
+				case 'file_is_null':
+					$message = "A null cant be read as file";
+					break;
+
+				default:
+					$message = "No file selected! Pleas choose on log file or add a log file";
+					break;
+			}
+
+			echo wp_sprintf( 
+				__($message), 
+				$this->_data['log_file'] 
+			); 
+		?>	
+	</p>
+</div>

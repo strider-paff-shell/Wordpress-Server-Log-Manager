@@ -1,0 +1,22 @@
+<?php
+if (!defined( 'WPINC'))
+{
+    die();
+}
+?>
+<?php include("parts/head.phtml");?>
+<div class="server-log-manager-logs-menu">
+	<ul>
+		<?php foreach($this->_data['logfiles'] as $logfile):?>
+			<li>
+				<a href="tools.php?page=serverlogmanager&_view=logs&log=<?php echo $logfile;?>">
+					<?php echo $logfile;?>		
+				</a>
+			</li>
+		<?php endforeach;?>
+	</ul>
+</div>
+<div class="server-log-manager-log">
+
+	<?php echo $this->_data['log_content'];?>
+</div>
